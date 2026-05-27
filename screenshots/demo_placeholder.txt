@@ -1,0 +1,12 @@
+Screenshots generated during automation runs will be saved here.
+
+Naming format:  YYYYMMDD_HHMMSS_label.png
+
+Examples:
+  20240115_103000_01_navigation.png
+  20240115_103001_before_fill.png
+  20240115_103002_02_filled_form.png
+  20240115_103003_03_after_submit.png
+
+To generate screenshots, run:
+  python main.py screenshot --url https://example.com --label demo

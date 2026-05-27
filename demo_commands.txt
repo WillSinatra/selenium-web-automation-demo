@@ -1,0 +1,51 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  Web Automation Toolkit — Demo Commands
+#  Run from the project root after completing installation.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# 1. VALIDATE — Check the sample CSV before running anything
+python main.py validate --input sample_data/sample_forms.csv
+
+# 2. SCREENSHOT — Capture a full-page screenshot of example.com
+python main.py screenshot --url https://example.com --label demo
+
+# 3. SCREENSHOT — Capture the Selenium demo form page
+python main.py screenshot --url https://www.selenium.dev/selenium/web/web-form.html --label selenium_form
+
+# 4. FILL — Fill the Selenium demo form with specific values (headless)
+python main.py fill \
+  --url https://www.selenium.dev/selenium/web/web-form.html \
+  --field "input[name='my-text']:Jane Doe" \
+  --field "input[name='my-email']:jane.doe@example.com" \
+  --field "input[name='my-phone']:+1-555-0199" \
+  --field "textarea[name='my-textarea']:This is an automated test message." \
+  --submit
+
+# 5. FILL — Same but with visible browser window
+python main.py fill \
+  --url https://www.selenium.dev/selenium/web/web-form.html \
+  --field "input[name='my-text']:Jane Doe" \
+  --field "input[name='my-email']:jane.doe@example.com" \
+  --submit \
+  --no-headless
+
+# 6. WORKFLOW — Run batch form filling from CSV (headless)
+python main.py workflow \
+  --input sample_data/sample_forms.csv \
+  --url https://www.selenium.dev/selenium/web/web-form.html
+
+# 7. WORKFLOW — Same with visible browser window
+python main.py workflow \
+  --input sample_data/sample_forms.csv \
+  --url https://www.selenium.dev/selenium/web/web-form.html \
+  --no-headless
+
+# 8. SCREENSHOT — Capture Google homepage
+python main.py screenshot --url https://google.com --label google_homepage
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  Output locations
+# ─────────────────────────────────────────────────────────────────────────────
+#  screenshots/   → All captured PNG files
+#  output/        → results.csv with workflow execution summary
+#  logs/          → app.log with full debug trace
