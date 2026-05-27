@@ -236,7 +236,7 @@ screenshots/
 
 ## 📄 License
 
-Copyright © 2025 Santiago Sánchez.
+Copyright © 2026 Santiago Sánchez.
 
 This project is intended for portfolio and demonstration purposes.
 Unauthorized commercial redistribution, resale, or reproduction
